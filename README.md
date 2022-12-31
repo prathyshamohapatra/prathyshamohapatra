@@ -2,7 +2,8 @@
 - 👀 I’m interested in WEB DEVELOPMENT
 - 🌱 I’m currently learning HTML CSS JAVASCRIPT
 - 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me :- CALL ME 7619613162
+- 📫 How to reach me :- CALL ME 7619613162  or email me at :prathysha.mohapatra@gmail.com
+
 
 <!---
 prathyshamohapatra/prathyshamohapatra is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
