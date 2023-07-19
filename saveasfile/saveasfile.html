@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!---<script src="saveasfile.js" defer></script>--> 
+    <title>Document</title>
+    <link rel="stylesheet" href="saveasfile.css">
+    
+</head>
+<body>
+    <div class="cont">
+        <textarea required></textarea>
+        <div class="options">
+           <div class="op filename">
+            <label>FILE NAME</label>
+            <input type="text" placeholder="Enter File Name">
+           </div>
+           <div class="op saveas">
+            <label>SAVE AS</label>
+            <div class="menu">
+                <select>
+                    <option value="text/plain">Text File (.txt)</option>
+                    <option value="application/msword">Doc File (.doc)</option>
+                    <option value="text/javascript">JS File (.js)</option>
+                    <option value="text/html">HTML File (.html)</option>
+                    <option value="application/vnd.ms-powerpoint">PPT File (.ppt)</option>
+                    <option value="image/svg+xml">SVG File (.txt)</option>
+                    <option value="application/pdf">PDF File (.txt)</option>
+                    <option value="application/xhtml+xml">XHTML File (.txt)</option>
+                </select>
+            </div>
+           </div>
+        </div>
+        <button class="savebtn">Save as Text File</button>
+    </div>
+    <script>
+        const txtarea=document.querySelector("textarea"),
+filenameip=document.querySelector(".filename input"),
+selmenu=document.querySelector(".saveas select"),
+savebtn=document.querySelector(".savebtn");
+selmenu.addEventListener("change",()=>{
+    let selopt=selmenu.options[selmenu.selectedIndex].text;
+    savebtn.innerHTML=` Save as ${selopt.split(" ")[0]} File`;
+
+})
+savebtn.addEventListener("click",()=>{
+    const blob=new Blob([txtarea.value],{type:selmenu.value});
+    const fileurl=URL.createObjectURL(blob);
+    console.log(fileurl);
+    const link=document.createElement("a");
+    link.download=filenameip.value;
+    link.href=fileurl;
+    link.click();
+})
+    </script>
+</body>
+</html>
